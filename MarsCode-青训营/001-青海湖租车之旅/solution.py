@@ -30,53 +30,9 @@
     # 3. 如果中途遇到无法到达下一个加油站的场景，则返回 "Impossible"
 # ## 代码实现
 def solution(distance, n, gas_stations):
-    # 花的费用
-    total_cost = 0
-    # 当前的距离
-    current_distance = 0
-    # 当前油量
-    current_gas = 200  # 假设初始油量为 200L
-    # 存储加油站信息的列表
-    stations = []
-    for gas_station in gas_stations:
-        # 计算加油站到「景点 X」的距离
-        distance_to_x = distance - current_distance
-        # 如果当前距离大于加油站的距离，则继续加油
-        if distance_to_x > gas_station[0]:
-            current_gas += (gas_station[1] * gas_station[0])  # 加油
-            total_cost += (gas_station[1] * gas_station[0])  # 记录费用
-            current_distance += gas_station[0]  # 更新当前距离
-        else:
-            # 如果当前距离小于加油站的距离，则无法到达下一个加油站
-            if current_gas < distance_to_x:
-                return "Impossible"
-            else:
-                total_cost += (gas_station[1] * distance_to_x)  # 记录费用
-                current_gas -= distance_to_x  # 减去油量
-                break
-        # 更新当前距离
-        current_distance = gas_station[0]
-        # 存储加油站信息
-        stations.append((gas_station[0], gas_station[1]))
-        # 排序加油站信息
-        stations.sort(key=lambda x: x[0])
-    return total_cost
 
-
-
-def solution(distance, n, gas_stations):
-    # 花的费用
-    total_cost = 0
-    # 当前的距离
-    current_distance = 0
-    # 当前油量
-    current_gas = 200  # 假设初始油量为 200L
-    # 存储加油站信息的列表
-    stations = []
-
-
-    
     return -1
+
 
 if __name__ == "__main__":
     #  You can add more test cases here

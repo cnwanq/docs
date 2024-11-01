@@ -1,0 +1,20 @@
+class Solution:
+    def confusingNumber(self, n: int) -> bool:
+        dmap = defaultdict(int)
+
+        dmap[0] = 0
+        dmap[1] = 1
+        dmap[6] = 9
+        dmap[8] = 8
+        dmap[9] = 6
+
+        ans = ''
+        for x in str(n)[::-1]:
+            if int(x) not in dmap:
+                return False
+
+            ans+=(str(dmap[int(x)]))
+        
+        if ans == str(n):
+            return False
+        return True
